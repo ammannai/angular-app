@@ -12,6 +12,7 @@ import {
   MatToolbarModule,
   
 } from '@angular/material';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { DonatePetComponent } from './donate-pet/donate-pet.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     RegisterUserComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    DonatePetComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { HomeComponent } from './home/home.component';
     MatCheckboxModule,
     MatIconModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

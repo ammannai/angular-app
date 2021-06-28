@@ -1,0 +1,55 @@
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Donate Pet">
+          <mat-card-content>
+           
+            <form class="row g-3">
+                <div class="col-md-3">
+                  <label for="inputEmail4" class="form-label">Age</label>
+                  <input type="number" class="form-control" placeholder="Age" name="age" >
+                </div>
+                <div class="col-md-9">
+                  <label for="inputPassword4" class="form-label">Location</label>
+                  <input type="text" class="form-control" placeholder="Location" name="Location">
+                </div>
+                <form class="was-validated">
+                    <div class="mb-3">
+                      <label for="validationTextarea" class="form-label">Description</label>
+                      <textarea class="form-control is-invalid" placeholder="Required example textarea" required></textarea>
+                    </div>
+                </form>
+                <div class="col-md-6">
+                  <label for="inputState" class="form-label">Pet Type</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Please Select type of the pet</option>
+                    <option>Cat</option>
+                    <option>Dog</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Pet Gender</label>
+                    <select id="inputState" class="form-select">
+                      <option selected>Please Select gender of the pet</option>
+                      <option>M</option>
+                      <option>F</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputState" class="form-label">Pet Picture</label>
+                    <input type="file" class="form-control" aria-label="file example" required>
+                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                  </div>
+                  <button
+                  mat-raised-button
+                  color="primary"
+                  class="login-button">
+                  Submit Pet
+                </button>
+              </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
