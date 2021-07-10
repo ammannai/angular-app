@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatCardModule,
   MatTabsModule,
@@ -22,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { DonatePetComponent } from './donate-pet/donate-pet.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DonatePetComponent } from './donate-pet/donate-pet.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    DonatePetComponent
+    DonatePetComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,9 @@ import { DonatePetComponent } from './donate-pet/donate-pet.component';
     MatIconModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
