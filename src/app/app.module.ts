@@ -24,6 +24,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { DonatePetComponent } from './donate-pet/donate-pet.component';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PetManagementComponent } from './pet-management/pet-management.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     HomeComponent,
     DonatePetComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent,
+    PetManagementComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

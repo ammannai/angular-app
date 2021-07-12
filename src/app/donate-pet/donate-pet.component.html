@@ -1,44 +1,69 @@
-<div class="login-page">
-  <mat-card class="mat-elevation-z12">
-    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-      <mat-tab label="Donate Pet">
-        <mat-card-content>
-         
-          <form [formGroup]="petForm" class="row g-3">
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row">
+        <div class="booking-form">
+          <form [formGroup]="petForm" (ngSubmit)='postPet(petForm.value)'>
+            
+            <div class="row">
               <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Age</label>
-                <input type="number" class="form-control" placeholder="Age" name="age" formControlName="age">
+                <div class="form-group">
+                  <span class="form-label">Age</span>
+                  <input class="form-control" type="number" placeholder="Age of Pet" formControlName="age">
+                </div>
               </div>
-              <div *ngIf="petForm.controls['age'].invalid &&  (petForm.controls['age'].dirty || petForm.controls['age'].touched)" class="alert alert-danger">
-                <div *ngIf="petForm.controls['age'].errors.required">
-                    Age is required
+             
+              <div class="col-md-6">
+                <div class="form-group">
+                  <span class="form-label">Gender</span>
+                  <select class="form-control" formControlName="genderPet">
+                    <option selected>M</option>
+                    <option>F</option>
+                  </select>
+                  <span class="select-arrow"></span>
                 </div>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="inputState" class="form-label">Pet Gender</label>
-              <select id="inputState" class="form-select" formControlName="genderPet">
-                <option selected>M</option>
-                <option value="1">F</option>
-              </select>
-            </div>
-                  <div class="was-validated">
-                    <label for="validationTextarea" class="form-label">Description</label>
-                    <textarea class="form-control is-invalid" placeholder="Required Description" required formControlName="description"></textarea>
+            <div *ngIf="petForm.controls['genderPet'].invalid &&  (petForm.controls['genderPet'].dirty || petForm.controls['genderPet'].touched)" class="alert alert-danger">
+              <div *ngIf="petForm.controls['genderPet'].errors.required">
+                  Gender is required
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <span class="form-label">Description</span>
+                  <textarea class="form-control" placeholder="Description of the pet" required formControlName="description"></textarea>
+                </div>
+              </div>
+              
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Pet Picture</span>
+                    <input  type="file" class="custom-file-upload" aria-label="file example"  formControlName="imagePet">
                   </div>
-                <div class="mb-3">
-                  <label for="inputState" class="form-label">Pet Image</label>
-                  <input type="file" class="form-control" aria-label="file example"  formControlName="imagePet">
-                  <div class="invalid-feedback">Example invalid form file feedback</div>
                 </div>
-                <button
-                mat-raised-button
-                color="primary"
-                class="login-button" (click)="postPet()">
-                Submit Pet
-              </button>
-            </form>
-        </mat-card-content>
-      </mat-tab>
-    </mat-tab-group>
-  </mat-card>
+                <div *ngIf="petForm.controls['imagePet'].invalid &&  (petForm.controls['imagePet'].dirty || petForm.controls['imagePet'].touched)" class="alert alert-danger">
+                  <div *ngIf="petForm.controls['imagePet'].errors.required">
+                      Picture is required
+                  </div>
+              </div>
+              <div class="row">
+              <div class="col-md-4">
+                <div class="form-btn">
+                  <button class="submit-btn" type="submit" [disabled]="petForm.pristine || petForm.invalid" (click)="postPet()">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-btn">
+                <button class="reset-btn" type="reset">Reset</button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
-import { Pet } from '../models/pet';
+import { PetModel } from '../models/pet';
 import { ApiService } from '../shared/api.service';
 
 
@@ -11,7 +11,8 @@ import { ApiService } from '../shared/api.service';
 })
 export class DonatePetComponent implements OnInit {
 petForm : FormGroup;
-pet : Pet ;
+pet : PetModel = new PetModel(1,'',0,'','') ;
+
 
 
   constructor(
@@ -21,15 +22,13 @@ pet : Pet ;
 
   ngOnInit() {
     this.petForm = this.formBuilder.group({
-      id:[''],
       genderPet:['',Validators.required],
-      age:['',Validators.required],
-      description:['',Validators.required],
+      age:['0'],
+      description:[''],
       imagePet:['',Validators.required]
     })
   }
-  postPet(pet : any) {
-    this.pet.id = this.petForm.value.id;
+  postPet() {
     this.pet.genderPet = this.petForm.value.genderPet;
     this.pet.age = this.petForm.value.age;
     this.pet.description = this.petForm.value.description;
@@ -37,9 +36,11 @@ pet : Pet ;
   this.api.postPet(this.pet).subscribe(res => {
     console.log(res);
     alert ('Pet Posted yeah');
+    this.petForm.reset();
   },
   err => {
     alert('Something went wrong');
+    this.petForm.reset();
   }
   )
   }
